@@ -1,0 +1,93 @@
+@import 'reset.css';
+
+section .background-color {
+  position: absolute;
+  filter: blur(150px);
+}
+
+section .background-color:nth-child(1) {
+  top: 0;
+  background-color: #1da1fe;
+  width: 100%;
+  height: 40%;
+}
+
+section .background-color:nth-child(2) {
+  bottom: 0;
+  right: 0;
+  background-color: #1fe1fa;
+  width: 70%;
+  height: 50%;
+}
+
+section .background-color:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  background-color: #1fea1f;
+  width: 40%;
+  height: 30%;
+}
+
+main {
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+  background: linear-gradient(to bottom, #1da1fe, #ffffff);
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  border-top: 1px solid rgba(255,255,255, 0.5);
+  background: rgba(255,255,255, 0.1);
+  backdrop-filter: blur(10px);
+  z-index: 5;
+}
+
+.card {
+  position:relative;
+  top:0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255, 0.4);
+  background-color: rgba(255,255,255, 0.1);
+  backdrop-filter: blur(4px);
+  border-radius: 20px;
+  width: 100px;
+  height: 100px;
+  font-size: 50px;
+  color: white;
+  box-shadow: 0 5px 45px rgba(0,0,0, 0.1);
+  overflow: hidden;
+  z-index: 1;
+  transition: top 0.5s, z-index 0.5s, transform 0.5s;
+  transition-delay: 0.5s, 0.3s, 0s;
+}
+
+.card:hover {
+  transition-delay: 0s, 0.3s, 0.5s;
+  z-index: 10;
+  top: -60px;
+  transform: translateY(60px);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 70%;
+  background-color: rgba(255,255,255, 0.5);
+  transform: skewX(45deg) translateX(150px);
+  transition: .3s;
+}
+
+.card:hover::before {
+  transform: skewX(45deg) translateX(-150px);
+}
