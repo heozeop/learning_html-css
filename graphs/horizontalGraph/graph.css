@@ -1,0 +1,62 @@
+/* reference https://www.youtube.com/watch?v=efwL2aV54sY&t=17s */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #262626;
+}
+
+.center {
+  width: 60%;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background: #333;
+  box-shadow: 0 20px 50px rgba(0,0,0,.5);
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.skillBox {
+  width: 100%;
+  margin: 20px 0;
+}
+.skillBox p {
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+  padding: 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.skillBox p:nth-child(2) {
+  float: right;
+  position: relative;
+  top: -25px;
+}
+
+.skill {
+  background: #262626;
+  padding: 2px;
+  border: 1px solid #0fffb7;
+  border-radius: 2px;
+}
+
+.skill_level {
+  background: #0fffb7;
+  height: 10px;
+  box-sizing: border-box;
+}
