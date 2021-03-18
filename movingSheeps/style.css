@@ -1,0 +1,17 @@
+/* reference https://www.youtube.com/watch?v=hCHL7sydzn0 */
+* {
+  outline: 0;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  background-color: #ffcaef;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+}
