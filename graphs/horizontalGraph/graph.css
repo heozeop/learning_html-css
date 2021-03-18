@@ -53,10 +53,19 @@ h1 {
   padding: 2px;
   border: 1px solid #0fffb7;
   border-radius: 2px;
+  overflow: hidden;
 }
 
 .skill_level {
   background: #0fffb7;
   height: 10px;
   box-sizing: border-box;
+  animation: fillBox 1s ease;
+  width: var(--percentage);
+}
+
+@keyframes fillBox {
+  from {
+    transform: translateX(-100%);
+  }
 }
