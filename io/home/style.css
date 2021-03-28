@@ -1,0 +1,63 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  line-height: 1.5;
+}
+
+body {
+  background-color: black;
+  margin: 0;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(min(10ch, 100%), 2fr));
+  align-items: flex-start;
+}
+
+ul {
+  list-style: none;
+}
+p {
+  margin: 0;
+}
+
+.crispy {
+  border-radius: 5px;
+  object-fit: cover;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  display:block;
+  margin: 0 auto;
+}
+
+.card {
+  color: white;
+  margin: 0;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 6rem;
+}
+.intro {
+  font-size: 5rem;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+}
