@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  gap: 1em;
+}
+
+.bg {
+  width: 200px;
+  height: 200px;
+  position:relative; 
+  background-color: #ededed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg:nth-child(1) {
+  perspective-origin: top;
+  perspective: 100px;
+}
+.bg:nth-child(2) {
+  perspective-origin: right;
+  perspective: 200px;
+}
+.bg:nth-child(3) {
+  perspective-origin: bottom;
+  perspective: 300px
+}
+.bg:nth-child(4) {
+  perspective-origin: left;
+  perspective: 400px;
+}
+
+.peek {
+  position:absolute;
+  top:0; left:0; 
+  width:100%; height:100px;
+  background: #444;
+  transform: rotateX(45deg);
+}
