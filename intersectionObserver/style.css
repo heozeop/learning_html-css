@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  position: relative;
+}
+
+.item:nth-child(2n) {
+  background-color: #ededed;
+}
+
+#trigger {
+  position: absolute;
+  bottom: 5%;
+}
