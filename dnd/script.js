@@ -1,6 +1,6 @@
 const clickPosition = {
   top: 0,
-  lefT: 0
+  left: 0
 }
 
 function move(element, position) {
@@ -77,6 +77,29 @@ function onDrop(ev) {
   ev.target.appendChild(dragables[0]);
 }
 
+// tab
+
+function touchStart(event) {
+  console.log('touchStart')
+  clickPosition.top = event.touches[0].pageY - event.target.offsetTop;
+  clickPosition.left = event.touches[0].pageX - event.target.offsetLeft;
+  
+  event.target.addEventListener('touchmove', touchMove);
+}
+function touchMove(event) {
+  const position = {
+    top: event.touches[0].pageY,
+    left: event.touches[0].pageX
+  }
+
+  move(event.touches[0].target, position);
+}
+
+function touchEnd(event) {
+  console.log('touchEnd')
+  event.target.removeEventListener('touchmove', touchMove);
+}
+
 window.addEventListener('DOMContentLoaded', () => {
   const background = document.querySelector('.background');
   background.addEventListener('dragover', dragOver);
@@ -86,5 +109,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const dragables = document.querySelectorAll('.draggable');
   dragables[0].addEventListener('mousedown', onMouseDown);
   dragables[0].addEventListener('mouseup', onMouseUp);
+  dragables[0].addEventListener('touchstart', touchStart);
+  dragables[0].addEventListener('touchend', touchEnd);
 });
 
