@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+  display: flex;
+  place-content: center;
+  align-items: center;
+  background-color: hsl(196, 13%, 17%);
+
+  counter-reset: images;
+}
+
+.box {
+  position: relative;
+  height: 500px;
+  width: 500px;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+  z-index: calc(1 + var(--i));
+  opacity: calc(1 - (0.2 * var(--j)));
+}
+
+.box:hover img {
+  transform: 
+    rotate(-30deg) 
+    skew(25deg)
+    translateX(calc(35px * var(--i)))
+    translateY(calc(-35px * var(--i)))
+    ;
+  box-shadow: -20px 20px 20px hsla(0, 0%, 0%, 0.25);
+}
