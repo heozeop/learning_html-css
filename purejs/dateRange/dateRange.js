@@ -4,9 +4,15 @@ class DateRange {
   }
 
   constructor(args) {
-    const today = new Date();
-    this.start = args?.start ?? today.getDate();
-    this.end = args?.end ?? new Date(today.getDate() + 1);
+    let start = Date.now();
+    let end = Date.now();
+    if (args) {
+      start = args[0];
+      end = args[1];
+    }
+
+    this.start = new Date(start);
+    this.end = new Date(end);
   }
 }
 
