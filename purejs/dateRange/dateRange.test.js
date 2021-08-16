@@ -22,17 +22,35 @@ test('created dateRange has default start date and end date properties', () => {
 test('dateRange has equal function', () => {
   const firstDateRange = DateRange.from({
     start: '1998',
-    end:'1999.1'
+    end: '1999.1'
   });
   const secondDateRange = DateRange.from({
     start: '1998',
-    end:'1999.1'
+    end: '1999.1'
   });
   const thirdDateRange = DateRange.from({
     start: '1999.2',
-    end:'2000'
+    end: '2000'
   });
 
   expect(firstDateRange.equal(secondDateRange)).toBe(true);
   expect(secondDateRange.equal(thirdDateRange)).toBe(false);
-})
+});
+
+test('dateRange has contain function', () => {
+   const firstDateRange = DateRange.from({
+    start: '1998',
+    end: '1999.1'
+  });
+  const secondDateRange = DateRange.from({
+    start: '1998.7',
+    end: '1998.9'
+  });
+  const thirdDateRange = DateRange.from({
+    start: '1998.7.19',
+    end: '1998.8.2'
+  });
+
+  expect(firstDateRange.contain(secondDateRange)).toBe(true);
+  expect(secondDateRange.contain(thirdDateRange)).toBe(true);
+});

@@ -20,6 +20,15 @@ class DateRange {
 
     return (thisStartParsed === startParsed && thisEndParsed === endParsed);
   }
+
+  contain(dateRange) {
+    const thisStartParsed = Date.parse(this.start);
+    const thisEndParsed = Date.parse(this.end);
+    const startParsed = Date.parse(dateRange.start);
+    const endParsed = Date.parse(dateRange.end);
+
+    return (thisStartParsed <= startParsed && endParsed <= thisEndParsed);
+  }
 }
 
 module.exports = DateRange;
