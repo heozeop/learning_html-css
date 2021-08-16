@@ -54,3 +54,23 @@ test('dateRange has contain function', () => {
   expect(firstDateRange.contain(secondDateRange)).toBe(true);
   expect(secondDateRange.contain(thirdDateRange)).toBe(true);
 });
+
+test('dateRange has intersection function', () => {
+   const firstDateRange = DateRange.from({
+    start: '1998',
+    end: '1999.1'
+  });
+  const secondDateRange = DateRange.from({
+    start: '1998.7',
+    end: '1998.9'
+  });
+  const thirdDateRange = DateRange.from({
+    start: '1999.1',
+    end: '1999.8'
+  });
+
+
+    expect(firstDateRange.intersection(secondDateRange)).toBe(true);
+    expect(secondDateRange.intersection(thirdDateRange)).toBe(false);
+    expect(firstDateRange.intersection(thirdDateRange)).toBe(true);
+});

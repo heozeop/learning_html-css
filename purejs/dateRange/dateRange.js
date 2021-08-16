@@ -29,6 +29,15 @@ class DateRange {
 
     return (thisStartParsed <= startParsed && endParsed <= thisEndParsed);
   }
+
+  intersection(dateRange) {
+    const thisStartParsed = Date.parse(this.start);
+    const thisEndParsed = Date.parse(this.end);
+    const startParsed = Date.parse(dateRange.start);
+    const endParsed = Date.parse(dateRange.end);
+
+    return !(thisStartParsed > endParsed || thisEndParsed < startParsed);
+  }
 }
 
 module.exports = DateRange;
