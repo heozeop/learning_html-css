@@ -4,15 +4,21 @@ class DateRange {
   }
 
   constructor(args) {
-    let start = Date.now();
-    let end = Date.now();
-    if (args) {
-      start = args[0];
-      end = args[1];
-    }
+    let start = args?.start ?? Date.now();
+    let end = args?.end ?? Date.now();
 
     this.start = new Date(start);
     this.end = new Date(end);
+  }
+
+  equal(dateRange) {
+    const thisStartParsed = Date.parse(this.start);
+    const thisEndParsed = Date.parse(this.end);
+    const startParsed = Date.parse(dateRange.start);
+    const endParsed = Date.parse(dateRange.end);
+
+
+    return (thisStartParsed === startParsed && thisEndParsed === endParsed);
   }
 }
 
