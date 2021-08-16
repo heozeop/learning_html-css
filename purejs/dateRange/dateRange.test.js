@@ -19,11 +19,20 @@ test('created dateRange has default start date and end date properties', () => {
   expect(typeof endDate).not.toEqual("undefined");
 });
 
-// test('dateRange has equal function', () => {
-//   const firstDateRange = DateRange.from('1998', '1999.1');
-//   const secondDateRange = DateRange.from('1998', '1999.1');
-//   const thirdDateRange = DateRange.from('1999.2', '2000');
+test('dateRange has equal function', () => {
+  const firstDateRange = DateRange.from({
+    start: '1998',
+    end:'1999.1'
+  });
+  const secondDateRange = DateRange.from({
+    start: '1998',
+    end:'1999.1'
+  });
+  const thirdDateRange = DateRange.from({
+    start: '1999.2',
+    end:'2000'
+  });
 
-//   expect(firstDateRange.equal(secondDateRange)).toBe(true);
-//   expect(secondDateRange.equal(thirdDateRange)).toBe(false);
-// })
+  expect(firstDateRange.equal(secondDateRange)).toBe(true);
+  expect(secondDateRange.equal(thirdDateRange)).toBe(false);
+})
